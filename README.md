@@ -21,7 +21,7 @@ This backend application is for Pierre's Sweet and Savory Bakery Treats. The app
 ## Setup/Installation Requirements
 _To set up and install, follow the instructions to clone the repository._ 
 
-* To clone: 
+### To clone: 
 - Visit GitHub and clone the repository 
 - Open your terminal 
 - Type “git clone” in the terminal, paste the GitHub URL, and press enter
@@ -32,7 +32,7 @@ _To set up and install, follow the instructions to clone the repository._
  ## Database Setup
 To set up the database, follow the instructions below. 
 
-* To set up: 
+### To set up: 
 
 _Create an appsettings.json file and add the code in the image below; don’t forget to change your password_
 
