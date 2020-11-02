@@ -3,7 +3,6 @@
 }
 
 @using SweetAndSavory.Models;
-@using System.Security.Claims
 @model IEnumerable<SweetAndSavory.Models.Treat>
 
 <h1>Treats for @User.Identity.Name</h1>
@@ -13,7 +12,7 @@
   <ul>
     @foreach (Treat treat in Model)
     {
-      <li>@Html.ActionLink($"{treat.Description}", "Details", new { id = treat.TreatId })</li>
+      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
     }
   </ul>
 } 

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using SweetAndSavory.Models;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,6 +26,7 @@ namespace SweetAndSavory.Controllers
     }
 
     //updated Index method
+    [Authorize]
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -56,7 +56,7 @@ namespace SweetAndSavory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+     [Authorize]
     public ActionResult Details(int id)
     {
       var thisTreat = _db.Treats
@@ -65,7 +65,7 @@ namespace SweetAndSavory.Controllers
           .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
-
+      [Authorize]
     public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
@@ -84,7 +84,7 @@ namespace SweetAndSavory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+      [Authorize]
     public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
@@ -102,7 +102,7 @@ namespace SweetAndSavory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
